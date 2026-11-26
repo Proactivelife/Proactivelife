@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Proactive Life</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Clinic
+  * Template URL: https://bootstrapmade.com/clinic-bootstrap-template/
+  * Updated: Jul 23 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <!-- Theme: apply saved / system preference before first paint (prevents a flash) -->
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        theme = 'dark';
+      }
+      theme = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    })();
+  </script>
+
+  <style>
+    /* ===== Header: bigger logo, left-aligned, on the same line as the menu ===== */
+    .header .branding { min-height: 0; padding: 8px 0; }
+    .header .branding > .container {
+      max-width: 100%;
+      padding-left: clamp(6px, 1vw, 14px);
+      padding-right: clamp(16px, 3vw, 48px);
+      flex-wrap: nowrap;
+    }
+    .header .logo { margin-right: auto; line-height: 1; flex-shrink: 0; }
+    .header .logo .sitename {
+      margin: 0;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+    }
+    .header .logo img {
+      height: 64px;
+      width: auto;
+      max-height: none;
+      margin: 0;
+      display: block;
+      object-fit: contain;
+    }
+    /* Logo has a transparent background: give it a light plate in dark mode so it stays visible */
+    [data-theme="dark"] .header .logo img {
+      background-color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 10px;
+    }
+    .header-actions { display: flex; align-items: center; }
+    .header-actions .navmenu { display: flex; align-items: center; }
+
+
+    /* ===== Featured in: stylish auto-scrolling logo strip ===== */
+    .featured-in-section {
+      position: relative;
+      padding: 44px 0 50px;
+      background: color-mix(in srgb, var(--accent-color) 5%, var(--background-color));
+      border-top: 1px solid rgba(127, 127, 127, .18);
+      border-bottom: 1px solid rgba(127, 127, 127, .18);
+      overflow: hidden;
+    }
+    .featured-in-section > .container {
+      max-width: 1760px;
+      width: 100%;
+      padding-left: clamp(10px, 2vw, 36px);
+      padding-right: clamp(10px, 2vw, 36px);
+    }
+    .featured-in { margin: 0; }
+    .featured-head {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      max-width: 620px;
+      margin: 0 auto 30px;
+    }
+    .featured-head::before,
+    .featured-head::after {
+      content: "";
+      flex: 1 1 auto;
+      height: 2px;
+      border-radius: 2px;
+    }
+    .featured-head::before { background: linear-gradient(90deg, transparent, var(--accent-color)); }
+    .featured-head::after  { background: linear-gradient(270deg, transparent, var(--accent-color)); }
+    .featured-in-label {
+      display: block;
+      margin: 0;
+      font-family: var(--heading-font, 'Montserrat'), sans-serif;
+      font-size: clamp(13px, 3.4vw, 16px);
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: var(--heading-color);
+      opacity: 1;
+    }
+
+    .featured-marquee {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+    }
+    .featured-track {
+      display: flex;
+      width: max-content;
+      padding: 8px 0 14px;
+      animation: featured-scroll 55s linear infinite;
+    }
+    .featured-marquee:hover .featured-track,
+    .featured-marquee:focus-within .featured-track { animation-play-state: paused; }
+    @keyframes featured-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .featured-org {
+      flex: 0 0 auto;
+      width: 190px;
+      margin-right: 18px;
+      padding: 12px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid rgba(127, 127, 127, .25);
+      border-radius: 18px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .07);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .featured-org:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-color);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, .16);
+    }
+    .featured-logo {
+      width: 100%;
+      aspect-ratio: 150 / 84;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+    .featured-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transform: scale(var(--z, 1));
+    }
+    .featured-org-name {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      width: 100%;
+      min-height: 2.7em;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(100, 110, 120, .35);
+      font-family: var(--default-font, 'Roboto'), sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: center;
+      color: #2f3a45;
+    }
+    .featured-org-number {
+      margin-top: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+      color: var(--accent-color);
+    }
+    .featured-org-number:empty { display: none; }
+
+    @media (max-width: 767.98px) {
+      .featured-in-section { padding: 32px 0 36px; }
+      .featured-head { gap: 12px; margin-bottom: 22px; }
+      .featured-head::before, .featured-head::after { height: 1.5px; }
+      .featured-org { width: 148px; margin-right: 12px; padding: 9px; border-radius: 14px; }
+      .featured-org-name { font-size: 11.5px; margin-top: 8px; padding-top: 8px; }
+      .featured-track { animation-duration: 45s; }
+    }
+    /* people who prefer no motion: a swipeable row instead of an animation */
+    @media (prefers-reduced-motion: reduce) {
+      .featured-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+      .featured-track { animation: none; }
+      .featured-org[aria-hidden="true"] { display: none; }
+    }
+
+    /* Department banners: three across, image on top, text below */
+    .featured-departments .specialty-card {
+      display: flex !important;
+      flex-direction: column !important;
+      height: 100%;
+      overflow: hidden;
+    }
+    .featured-departments .specialty-visual {
+      order: -1;
+      position: relative;
+      width: 100% !important;
+      height: 220px;
+      flex: 0 0 auto;
+      background: linear-gradient(135deg, var(--accent-color), #1d4f7a); /* fallback if image is missing */
+    }
+    .featured-departments .specialty-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .featured-departments .specialty-content {
+      flex: 1 1 auto;
+      width: 100% !important;
+      display: flex;
+      flex-direction: column;
+    }
+    .featured-departments .specialty-content .specialty-link { margin-top: auto; }
+
+
+    /* ===== Home About: centered intro, image + cards, stats strip (mobile-first) ===== */
+    .home-about { overflow-x: clip; }
+    .about-head { max-width: 760px; margin: 0 auto 36px; text-align: center; }
+    .about-eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      background: color-mix(in srgb, var(--accent-color) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
+      border-radius: 999px;
+    }
+    .home-about .section-heading {
+      position: relative;
+      margin: 0 0 18px;
+      padding-bottom: 18px;
+      font-family: var(--heading-font, 'Montserrat'), sans-serif;
+      font-size: clamp(26px, 5.5vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -.01em;
+      color: var(--heading-color);
+    }
+    .home-about .section-heading::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 64px;
+      height: 4px;
+      margin-left: -32px;
+      border-radius: 4px;
+      background: var(--accent-color);
+    }
+    .home-about .lead-text {
+      margin: 0;
+      font-family: var(--default-font, 'Roboto'), sans-serif;
+      font-size: clamp(16px, 2.6vw, 18px);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--default-color);
+    }
+
+    /* image */
+    .home-about .about-visual { position: relative; width: 100%; padding: 22px 22px 40px 0; }
+    .home-about .about-visual .main-image {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, .15);
+    }
+    .home-about .about-visual .main-image img {
+      display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none;
+    }
+    .home-about .about-visual .experience-badge {
+      position: absolute !important; top: 0 !important; right: 0 !important; left: auto !important;
+      bottom: auto !important; transform: none !important; z-index: 3;
+    }
+    .home-about .about-visual .experience-badge .badge-content {
+      display: flex; flex-direction: column; align-items: center; text-align: center; padding: 14px 20px;
+    }
+    .home-about .about-visual .experience-badge .years { font-size: 30px; line-height: 1.1; font-weight: 700; }
+    .home-about .about-visual .experience-badge .text { font-size: 13px; line-height: 1.3; }
+    .home-about .about-visual .floating-card {
+      position: absolute !important; left: 18px !important; bottom: 0 !important; right: auto !important;
+      top: auto !important; transform: none !important; max-width: calc(100% - 40px); z-index: 3;
+    }
+    .home-about .about-visual .floating-card .card-content { display: flex; align-items: center; gap: 12px; }
+    .home-about .about-visual .floating-card h4 { margin: 0 0 2px; font-size: 16px; }
+    .home-about .about-visual .floating-card p { margin: 0; font-size: 13px; }
+
+    /* mission + services cards */
+    .about-pillars { display: grid; gap: 18px; }
+    .about-pillar {
+      display: flex;
+      gap: 16px;
+      padding: 22px;
+      background: var(--surface-color);
+      border: 1px solid rgba(127, 127, 127, .22);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+    }
+    .pillar-icon {
+      flex: 0 0 48px; width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; font-size: 22px; color: #fff;
+      background: linear-gradient(135deg, var(--accent-color), #1d4f7a);
+    }
+    .about-pillar h4 {
+      margin: 0 0 6px;
+      font-family: var(--heading-font, 'Montserrat'), sans-serif;
+      font-size: 18px; font-weight: 700; color: var(--heading-color);
+    }
+    .about-pillar p {
+      margin: 0;
+      font-family: var(--default-font, 'Roboto'), sans-serif;
+      font-size: 15px; font-weight: 400; line-height: 1.7; color: var(--default-color);
+    }
+    .about-pillar.is-mission {
+      background: linear-gradient(145deg, var(--accent-color), #1d4f7a);
+      border-color: transparent;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .18);
+    }
+    .about-pillar.is-mission h4,
+    .about-pillar.is-mission p { color: #fff; }
+    .about-pillar.is-mission .pillar-icon { background: rgba(255, 255, 255, .22); }
+    .service-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+    .service-chips li {
+      padding: 5px 12px; font-size: 13px; font-weight: 500; border-radius: 999px;
+      color: var(--accent-color);
+      background: color-mix(in srgb, var(--accent-color) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
+    }
+
+    /* stats strip */
+    .home-about .stats-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 0 !important;
+      max-width: 900px;
+      margin: 44px auto 0 !important;
+      padding: 22px 12px;
+      background: var(--surface-color);
+      border: 1px solid rgba(127, 127, 127, .22);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+    }
+    .home-about .stat-item { padding: 4px 8px; text-align: center; }
+    .home-about .stat-item + .stat-item { border-left: 1px solid rgba(127, 127, 127, .25); }
+    .home-about .stat-number {
+      font-family: var(--heading-font, 'Montserrat'), sans-serif;
+      font-size: clamp(24px, 6vw, 38px);
+      font-weight: 700; line-height: 1.1; color: var(--accent-color);
+    }
+    .home-about .stat-label { margin-top: 4px; font-size: clamp(11px, 2.9vw, 14px); font-weight: 500; line-height: 1.3; }
+    .home-about .cta-section { margin-top: 32px; text-align: center; }
+
+    /* tablets and phones */
+    @media (max-width: 767.98px) {
+      .about-head { margin-bottom: 26px; }
+      .home-about .about-visual { padding: 18px 12px 38px 0; }
+      .home-about .about-visual .main-image { border-radius: 16px; }
+      .home-about .about-visual .experience-badge .badge-content { padding: 10px 14px; }
+      .home-about .about-visual .experience-badge .years { font-size: 24px; }
+      .home-about .about-visual .experience-badge .text { font-size: 11px; }
+      .home-about .about-visual .floating-card { left: 10px !important; max-width: calc(100% - 24px); }
+      .home-about .about-visual .floating-card .icon { transform: scale(.85); }
+      .home-about .about-visual .floating-card h4 { font-size: 14px; }
+      .home-about .about-visual .floating-card p { font-size: 12px; }
+      .about-pillar { padding: 18px 16px; gap: 12px; }
+      .pillar-icon { flex-basis: 40px; width: 40px; height: 40px; font-size: 18px; }
+      .home-about .stats-grid { margin-top: 30px !important; padding: 16px 4px; }
+      .home-about .cta-section .btn-primary { display: block; width: 100%; max-width: 320px; margin: 0 auto; text-align: center; }
+    }
+    @media (max-width: 380px) {
+      .home-about .about-visual .main-image { aspect-ratio: 1 / 1; }
+    }
+
+    /* ===== Special Incentives ===== */
+    #call-to-action { position: relative; overflow: hidden; }
+    #call-to-action::before,
+    #call-to-action::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, color-mix(in srgb, var(--accent-color) 20%, transparent), transparent 70%);
+    }
+    #call-to-action::before { top: -140px; right: -120px; width: 380px; height: 380px; }
+    #call-to-action::after  { bottom: -160px; left: -140px; width: 420px; height: 420px; opacity: .7; }
+    #call-to-action > .container { position: relative; z-index: 1; }
+
+    #call-to-action .incentive-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      background: color-mix(in srgb, var(--accent-color) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
+      border-radius: 999px;
+    }
+    #call-to-action .incentive-title {
+      margin: 0 0 20px;
+      font-family: var(--heading-font, 'Montserrat'), sans-serif;
+      font-size: clamp(28px, 5.4vw, 44px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -.01em;
+      color: var(--heading-color);
+    }
+    #call-to-action .incentive-title span { color: var(--accent-color); }
+    #call-to-action .incentive-text {
+      margin: 0 0 26px;
+      padding-left: 18px;
+      border-left: 3px solid var(--accent-color);
+      font-family: var(--default-font, 'Roboto'), sans-serif;
+      font-size: clamp(15px, 2.4vw, 16.5px);
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--default-color);
+    }
+    #call-to-action .incentive-perks {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+    #call-to-action .incentive-perks li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 10px;
+      text-align: center;
+      background: var(--surface-color);
+      border: 1px solid rgba(127, 127, 127, .22);
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .06);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    #call-to-action .incentive-perks li:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0, 0, 0, .12); }
+    #call-to-action .perk-icon {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; font-size: 20px; color: #fff;
+      background: linear-gradient(135deg, var(--accent-color), #1d4f7a);
+    }
+    #call-to-action .perk-label { font-size: 14px; font-weight: 600; line-height: 1.3; color: var(--heading-color); }
+
+    #call-to-action .cta-wrapper { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+    #call-to-action .primary-cta,
+    #call-to-action .secondary-cta {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 28px !important;
+      border-radius: 999px !important;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none !important;
+      transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+    }
+    #call-to-action .primary-cta {
+      color: #fff !important;
+      background: var(--accent-color) !important;
+      border: 2px solid var(--accent-color) !important;
+      box-shadow: 0 10px 24px color-mix(in srgb, var(--accent-color) 40%, transparent);
+    }
+    #call-to-action .secondary-cta {
+      color: var(--accent-color) !important;
+      background: transparent !important;
+      border: 2px solid var(--accent-color) !important;
+    }
+    #call-to-action .primary-cta:hover,
+    #call-to-action .secondary-cta:hover { transform: translateY(-3px); }
+    #call-to-action .secondary-cta:hover { background: color-mix(in srgb, var(--accent-color) 10%, transparent) !important; }
+
+    /* image: natural proportions (no cropping of faces), rounded, with offset shape behind */
+    #call-to-action .incentive-visual { position: relative; padding: 0 0 28px; }
+    #call-to-action .incentive-visual::before {
+      content: "";
+      position: absolute;
+      top: 18px; left: 18px; right: -14px; bottom: 10px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, var(--accent-color), #1d4f7a);
+      opacity: .2;
+    }
+    #call-to-action .incentive-img {
+      position: relative;
+      z-index: 1;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, .18);
+    }
+    #call-to-action .incentive-img img { display: block; width: 100%; height: auto; }
+    #call-to-action .incentive-tag {
+      position: absolute;
+      z-index: 2;
+      left: 18px;
+      bottom: 0;
+      max-width: calc(100% - 36px);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px 12px 12px;
+      color: #1f2d3a;
+      background: rgba(255, 255, 255, .95);
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+    }
+    #call-to-action .incentive-tag strong { display: block; font-size: 15px; line-height: 1.25; }
+    #call-to-action .incentive-tag span:not(.tag-icon) { display: block; font-size: 12.5px; color: #5b6770; }
+    #call-to-action .tag-icon {
+      flex: 0 0 40px; width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; font-size: 18px; color: #fff;
+      background: linear-gradient(135deg, var(--accent-color), #1d4f7a);
+    }
+
+    @media (max-width: 991.98px) {
+      #call-to-action .incentive-text { border-left-width: 3px; }
+    }
+    @media (max-width: 767.98px) {
+      #call-to-action::before { width: 240px; height: 240px; top: -90px; right: -90px; }
+      #call-to-action::after  { width: 260px; height: 260px; bottom: -110px; left: -100px; }
+      #call-to-action .incentive-perks { grid-template-columns: 1fr; gap: 10px; }
+      #call-to-action .incentive-perks li { flex-direction: row; justify-content: flex-start; gap: 14px; padding: 12px 14px; text-align: left; }
+      #call-to-action .perk-icon { width: 40px; height: 40px; font-size: 18px; flex: 0 0 40px; }
+      #call-to-action .cta-wrapper { flex-direction: column; align-items: stretch; }
+      #call-to-action .primary-cta, #call-to-action .secondary-cta { width: 100%; }
+      #call-to-action .incentive-visual::before { right: -6px; left: 12px; top: 12px; }
+      #call-to-action .incentive-tag { left: 10px; padding: 10px 14px 10px 10px; max-width: calc(100% - 20px); }
+      #call-to-action .incentive-img { border-radius: 18px; }
+    }
+
+    /* ===== Hero (own class names, so the template CSS cannot interfere) ===== */
+    #hero.hx-hero {
+      position: relative;
+      overflow-x: clip;
+      min-height: 0;
+      padding: 150px 0 70px;
+      background:
+        radial-gradient(900px 480px at 100% 0%, color-mix(in srgb, var(--accent-color) 14%, transparent), transparent 60%),
+        radial-gradient(700px 420px at 0% 100%, color-mix(in srgb, var(--accent-color) 10%, transparent), transparent 60%),
+        var(--background-color);
+    }
+    #hero .hx-row { --bs-gutter-y: 2rem; }
+    #hero .hx-content { position: relative; z-index: 2; }
+
+    /* badges */
+    #hero .hx-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 22px; }
+    #hero .hx-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--heading-color);
+      background: var(--surface-color);
+      border: 1px solid rgba(127, 127, 127, .25);
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .05);
+    }
+    #hero .hx-badge i { font-size: 15px; line-height: 1; color: var(--accent-color); }
+    #hero .hx-badge-star i { color: #f5a623; }
+
+    /* headline + text */
+    #hero .hx-title {
+      margin: 0 0 20px;
+      font-family: var(--heading-font, 'Montserrat'), sans-serif;
+      font-size: clamp(32px, 5.2vw, 54px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -.02em;
+      color: var(--heading-color);
+    }
+    #hero .hx-highlight {
+      color: var(--accent-color);
+      background: linear-gradient(transparent 82%, color-mix(in srgb, var(--accent-color) 28%, transparent) 82%);
+      padding: 0 2px;
+    }
+    #hero .hx-text {
+      max-width: 540px;
+      margin: 0 0 26px;
+      font-family: var(--default-font, 'Roboto'), sans-serif;
+      font-size: clamp(16px, 2.5vw, 18px);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--default-color);
+    }
+
+    /* stats */
+    #hero .hx-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 540px;
+      margin: 0 0 26px;
+      padding: 18px 6px;
+      background: var(--surface-color);
+      border: 1px solid rgba(127, 127, 127, .22);
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .07);
+    }
+    #hero .hx-stat { padding: 2px 8px; text-align: center; }
+    #hero .hx-stat + .hx-stat { border-left: 1px solid rgba(127, 127, 127, .25); }
+    #hero .hx-stat strong {
+      display: block;
+      font-family: var(--heading-font, 'Montserrat'), sans-serif;
+      font-size: clamp(22px, 5vw, 30px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--accent-color);
+    }
+    #hero .hx-stat > span {
+      display: block;
+      margin-top: 4px;
+      font-size: clamp(11px, 2.8vw, 13.5px);
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--default-color);
+    }
+
+    /* buttons */
+    #hero .hx-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    #hero .hx-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 28px;
+      font-family: var(--default-font, 'Roboto'), sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+    }
+    #hero .hx-btn-solid {
+      color: #fff;
+      background: var(--accent-color);
+      border: 2px solid var(--accent-color);
+      box-shadow: 0 10px 24px color-mix(in srgb, var(--accent-color) 40%, transparent);
+    }
+    #hero .hx-btn-ghost {
+      color: var(--accent-color);
+      background: transparent;
+      border: 2px solid var(--accent-color);
+    }
+    #hero .hx-btn:hover { transform: translateY(-3px); }
+    #hero .hx-btn-ghost:hover { background: color-mix(in srgb, var(--accent-color) 10%, transparent); }
+
+    /* hotline */
+    #hero .hx-hotline {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 24px;
+      padding: 10px 24px 10px 10px;
+      background: var(--surface-color);
+      border: 1px solid rgba(127, 127, 127, .22);
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .06);
+    }
+    #hero .hx-hotline-icon {
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 18px;
+      color: #fff;
+      background: linear-gradient(135deg, #e5484d, #b3262b);
+    }
+    #hero .hx-hotline small {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .75;
+    }
+    #hero .hx-hotline strong { display: block; font-size: 17px; line-height: 1.2; color: var(--heading-color); }
+
+    /* image + rating banner */
+    #hero .hx-visual { position: relative; padding: 0 0 34px; }
+    #hero .hx-visual::before {
+      content: "";
+      position: absolute;
+      top: 20px; left: 20px; right: -14px; bottom: 14px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--accent-color), #1d4f7a);
+      opacity: .2;
+    }
+    #hero .hx-photo { position: relative; z-index: 1; border-radius: 28px; overflow: hidden; box-shadow: 0 26px 60px rgba(0, 0, 0, .2); }
+    #hero .hx-photo img { display: block; width: 100%; height: auto; }
+    #hero .hx-rating {
+      position: absolute;
+      z-index: 3;
+      left: 22px;
+      bottom: 0;
+      max-width: calc(100% - 44px);
+      padding: 14px 22px;
+      background: rgba(255, 255, 255, .97);
+      border: 1px solid rgba(0, 0, 0, .05);
+      border-radius: 16px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .2);
+    }
+    #hero .hx-stars { display: flex; gap: 3px; margin-bottom: 4px; font-size: 16px; line-height: 1; color: #f5a623; }
+    #hero .hx-rating-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; }
+    #hero .hx-rating-line strong {
+      font-family: var(--heading-font, 'Montserrat'), sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1;
+      color: #1f2d3a;
+    }
+    #hero .hx-rating-line span { font-size: 13px; font-weight: 500; color: #5b6770; }
+
+    @media (max-width: 991.98px) {
+      #hero.hx-hero { padding: 130px 0 56px; }
+      #hero .hx-text, #hero .hx-stats { max-width: none; }
+      #hero .hx-visual { margin-top: 32px; }
+    }
+    @media (max-width: 767.98px) {
+      #hero.hx-hero { padding: 118px 0 44px; }
+      #hero .hx-badges { gap: 8px; }
+      #hero .hx-badge { padding: 6px 12px; font-size: 12px; }
+      #hero .hx-stats { padding: 14px 2px; }
+      #hero .hx-actions { flex-direction: column; }
+      #hero .hx-btn { width: 100%; }
+      #hero .hx-hotline { display: flex; width: 100%; border-radius: 18px; }
+      #hero .hx-visual { padding-bottom: 30px; }
+      #hero .hx-visual::before { left: 12px; right: -6px; top: 12px; border-radius: 22px; }
+      #hero .hx-photo { border-radius: 20px; }
+      #hero .hx-rating { left: 12px; max-width: calc(100% - 24px); padding: 10px 16px; }
+      #hero .hx-stars { font-size: 14px; }
+      #hero .hx-rating-line strong { font-size: 19px; }
+      #hero .hx-rating-line span { font-size: 12px; }
+    }
+
+    /* ===== Dark / light toggle button ===== */
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      margin-left: 18px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(127, 127, 127, .4);
+      background: transparent;
+      color: var(--heading-color);
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color .25s, border-color .25s, color .25s, transform .2s;
+    }
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+      transform: rotate(15deg);
+    }
+    .theme-toggle:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+    /* show moon in light mode (click -> dark), sun in dark mode (click -> light) */
+    :root[data-theme="dark"] .theme-icon-moon { display: none; }
+    :root:not([data-theme="dark"]) .theme-icon-sun { display: none; }
+
+    @media (max-width: 1199.98px) {
+      .header .logo img { height: 52px; }
+      /* on mobile the button sits just before the hamburger icon */
+      .theme-toggle { order: -1; margin-left: 0; margin-right: 12px; width: 38px; height: 38px; font-size: 16px; }
+    }
+
+    /* ===== Dark theme ===== */
+    :root[data-theme="light"] { color-scheme: light; }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --background-color: #0f1720;
+      --default-color: #c9d3dd;
+      --heading-color: #f1f5f9;
+      --surface-color: #18222d;
+      --nav-color: #d5dde6;
+      --nav-hover-color: var(--accent-color);
+      --nav-mobile-background-color: #18222d;
+      --nav-dropdown-background-color: #18222d;
+      --nav-dropdown-color: #d5dde6;
+      --nav-dropdown-hover-color: var(--accent-color);
+    }
+    [data-theme="dark"] .light-background {
+      --background-color: #131c26;
+      --surface-color: #1b2733;
+    }
+    [data-theme="dark"] .header,
+    [data-theme="dark"] .header .branding {
+      --background-color: #0f1720;
+      --default-color: #c9d3dd;
+      --heading-color: #f1f5f9;
+    }
+    [data-theme="dark"] .footer {
+      --background-color: #0a1017;
+      --default-color: #b7c3cf;
+      --heading-color: #ffffff;
+      --surface-color: #141d27;
+    }
+    [data-theme="dark"] body {
+      background-color: var(--background-color);
+      color: var(--default-color);
+    }
+    [data-theme="dark"] .section { background-color: var(--background-color); }
+    [data-theme="dark"] .section.light-background { background-color: #131c26; }
+    [data-theme="dark"] .floating-card,
+    [data-theme="dark"] .specialty-card,
+    [data-theme="dark"] .service-item,
+    [data-theme="dark"] .doctor-profile,
+    [data-theme="dark"] .services-sidebar {
+      background-color: var(--surface-color);
+      color: var(--default-color);
+    }
+    [data-theme="dark"] .form-control,
+    [data-theme="dark"] .form-select {
+      background-color: #0f1720;
+      color: var(--default-color);
+      border-color: rgba(255, 255, 255, .15);
+    }
+    body, .header, .header .branding, .section, .footer {
+      transition: background-color .3s ease, color .3s ease;
+    }
+
+    /* ===== Testimonials ===== */
+    .btn-view-all {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 50px; font-weight: 600;
+      color: var(--contrast-color, #fff); background: var(--accent-color);
+      text-decoration: none; transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .btn-view-all:hover { transform: translateY(-2px); box-shadow: 0 10px 24px color-mix(in srgb, var(--accent-color), transparent 65%); color: var(--contrast-color, #fff); }
+
+    .testimonials-pro { position: relative; overflow: hidden; }
+    .testimonials-pro::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--accent-color), transparent 90%), transparent 70%);
+    }
+    .testimonials-pro .container { position: relative; }
+    .tp-eyebrow {
+      display: inline-block; padding: 6px 16px; border-radius: 50px; font-size: 13px;
+      font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent-color); background: color-mix(in srgb, var(--accent-color), transparent 88%);
+    }
+    .tp-title { font-size: clamp(28px, 4vw, 40px); font-weight: 700; margin: 16px 0 10px; color: var(--heading-color); }
+    .tp-sub { max-width: 620px; margin: 0 auto; color: color-mix(in srgb, var(--default-color), transparent 25%); }
+
+    .tp-stats {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 48px;
+      margin: 36px 0 44px; padding: 0; list-style: none;
+    }
+    .tp-stats li { text-align: center; }
+    .tp-stats strong { display: block; font-size: 30px; line-height: 1.1; color: var(--heading-color); }
+    .tp-stats span { font-size: 14px; color: color-mix(in srgb, var(--default-color), transparent 30%); }
+    .tp-stats .bi-star-fill { color: #f5b301; font-size: 22px; vertical-align: 2px; }
+
+    .tp-card {
+      position: relative; height: 100%; display: flex; flex-direction: column;
+      padding: 34px 30px 28px; border-radius: 20px;
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      box-shadow: 0 10px 30px rgba(15, 30, 50, .06);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .tp-card:hover {
+      transform: translateY(-6px); border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
+      box-shadow: 0 18px 40px rgba(15, 30, 50, .12);
+    }
+    .tp-quote-icon {
+      position: absolute; top: -20px; right: 28px; width: 46px; height: 46px; border-radius: 14px;
+      display: grid; place-items: center; font-size: 20px; color: #fff;
+      background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000 25%));
+      box-shadow: 0 8px 18px color-mix(in srgb, var(--accent-color), transparent 60%);
+    }
+    .tp-stars { color: #f5b301; font-size: 15px; letter-spacing: 2px; margin-bottom: 16px; }
+    .tp-text { flex: 1; font-size: 16px; line-height: 1.75; margin: 0 0 24px; color: var(--default-color); }
+    .tp-author {
+      display: flex; align-items: center; gap: 14px; padding-top: 20px;
+      border-top: 1px dashed color-mix(in srgb, var(--default-color), transparent 80%);
+    }
+    .tp-avatar {
+      flex: 0 0 52px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+      font-weight: 700; font-size: 17px; color: var(--accent-color);
+      background: color-mix(in srgb, var(--accent-color), transparent 86%);
+      border: 2px solid color-mix(in srgb, var(--accent-color), transparent 60%);
+    }
+    .tp-author h5 { margin: 0; font-size: 16px; font-weight: 700; color: var(--heading-color); }
+    .tp-author small { display: block; margin-top: 2px; font-size: 13px; color: color-mix(in srgb, var(--default-color), transparent 35%); }
+    .tp-author small i { color: var(--accent-color); margin-right: 4px; }
+    .tp-verified { margin-left: auto; font-size: 20px; color: #22a06b; }
+    @media (max-width: 575.98px) { .tp-stats { gap: 18px 28px; } .tp-card { padding: 30px 22px 24px; } }
+    [data-theme="dark"] .tp-card { box-shadow: 0 10px 30px rgba(0, 0, 0, .35); }
+
+    /* ===== Our Team: side-by-side cards (photo left, details right), extra space removed ===== */
+    .find-a-doctor.section { padding-top: 40px; padding-bottom: 50px; }
+    .find-a-doctor .section-title { padding-bottom: 24px; }
+    .find-a-doctor .section-title h2 { margin-bottom: 0; }
+    .find-a-doctor .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      align-items: stretch;
+      margin: 0;
+    }
+    @media (max-width: 767.98px) { .find-a-doctor .doctors-grid { grid-template-columns: 1fr; } }
+    .find-a-doctor .doctors-grid .doctor-profile {
+      display: flex; flex-direction: column; justify-content: space-between;
+      margin: 0; padding: 20px 24px; height: 100%; text-align: left;
+    }
+    .find-a-doctor .doctors-grid .profile-header {
+      display: flex; align-items: flex-start; gap: 16px; margin: 0 0 12px; padding: 0;
+    }
+    .find-a-doctor .doctors-grid .doctor-details { margin: 0; padding: 0; }
+    .find-a-doctor .doctors-grid .doctor-details h4 { margin: 0 0 6px; line-height: 1.25; }
+    .find-a-doctor .doctors-grid .specialty-tag { margin: 0 0 6px; }
+    .find-a-doctor .doctors-grid .experience-info { margin: 0; }
+    .find-a-doctor .doctors-grid .rating-section { margin: 0 0 14px; padding: 0; }
+    .find-a-doctor .doctors-grid .action-buttons { margin: 0; padding: 0; }
+    .find-a-doctor .doctors-grid + .text-center { margin-top: 28px !important; }
+
+    /* ===== Online Consultation button: label + number fit on one line inside the button ===== */
+    .emergency-banner .emergency-btn {
+      display: inline-flex; align-items: center; justify-content: center; flex-wrap: nowrap;
+      gap: 8px; max-width: 100%; box-sizing: border-box;
+      padding: 14px 22px; white-space: nowrap; line-height: 1.2;
+      font-size: clamp(14px, 1.25vw, 17px); text-align: center;
+    }
+    .emergency-banner .emergency-btn i { flex: none; }
+    .emergency-banner .emergency-btn-number { font-weight: 700; letter-spacing: .02em; }
+    @media (max-width: 575.98px) {
+      /* narrow phones: stack label over number, both stay inside the button */
+      .emergency-banner .emergency-btn { flex-wrap: wrap; width: 100%; gap: 2px 8px; white-space: normal; }
+      .emergency-banner .emergency-btn-label,
+      .emergency-banner .emergency-btn-number { white-space: nowrap; }
+    }
+    @media (max-width: 991.98px) { .emergency-banner .col-lg-5 { margin-top: 16px; } }
+
+    /* ===== Immediate Assistance: stylized block with two booking buttons ===== */
+    .contact-block.contact-block-pro {
+      position: relative; overflow: hidden; isolation: isolate;
+      padding: clamp(28px, 4vw, 52px);
+      border-radius: 28px;
+      color: #fff;
+      background:
+        radial-gradient(90% 120% at 100% 0%, color-mix(in srgb, var(--accent-color), transparent 62%) 0%, transparent 60%),
+        linear-gradient(135deg, #0f2236 0%, #16324c 55%, #1c3f5f 100%);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 30px 60px -22px rgba(10, 25, 45, .55);
+    }
+    .cbp-orb { position: absolute; border-radius: 50%; z-index: -1; pointer-events: none; }
+    .cbp-orb-1 { width: 320px; height: 320px; top: -140px; right: -90px; background: color-mix(in srgb, var(--accent-color), transparent 80%); }
+    .cbp-orb-2 { width: 200px; height: 200px; bottom: -90px; left: 35%; background: rgba(255,255,255,.05); }
+    .contact-block-pro .cbp-badge {
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;
+      padding: 7px 16px; border-radius: 50px; font-size: 13px; font-weight: 600; letter-spacing: .04em;
+      color: #ffffff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(6px);
+    }
+    .contact-block-pro .cbp-badge i { color: #ff8a97; }
+    .contact-block-pro .cbp-content h2 {
+      margin: 0 0 12px; color: #fff; font-weight: 800; line-height: 1.15; font-size: clamp(26px, 3.4vw, 40px);
+    }
+    .contact-block-pro .cbp-content p { margin: 0; color: #ffffff; font-size: 17px; line-height: 1.7; max-width: 520px; }
+
+    .cbp-actions { display: flex; flex-direction: column; gap: 16px; }
+    .cbp-btn {
+      display: flex; align-items: center; gap: 16px; width: 100%;
+      padding: 16px 20px; border-radius: 18px; text-decoration: none; box-sizing: border-box;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .cbp-btn:hover { transform: translateY(-4px); }
+    .cbp-icon {
+      flex: none; width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 22px;
+    }
+    .cbp-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; text-align: left; }
+    .cbp-text strong { font-size: 18px; line-height: 1.25; font-weight: 700; }
+    .cbp-text small { font-size: 13.5px; opacity: .8; }
+    .cbp-arrow { flex: none; font-size: 20px; transition: transform .25s ease; }
+    .cbp-btn:hover .cbp-arrow { transform: translateX(5px); }
+
+    .cbp-btn-primary { background: #fff; color: #14212e; box-shadow: 0 16px 32px -10px rgba(0,0,0,.35); }
+    .cbp-btn-primary .cbp-icon { background: var(--accent-color); color: #fff; }
+    .cbp-btn-primary .cbp-arrow { color: var(--accent-color); }
+    .cbp-btn-primary:hover { color: #14212e; box-shadow: 0 22px 40px -10px rgba(0,0,0,.45); }
+
+    .cbp-btn-secondary {
+      background: rgba(255,255,255,.06); color: #fff; border: 1.5px solid rgba(255,255,255,.35);
+      backdrop-filter: blur(8px);
+    }
+    .cbp-btn-secondary .cbp-icon { background: rgba(255,255,255,.2); color: #fff; }
+    .cbp-btn-secondary:hover { background: rgba(255,255,255,.22); color: #fff; border-color: #fff; }
+
+    @media (max-width: 575.98px) {
+      .cbp-btn { padding: 14px; gap: 12px; }
+      .cbp-icon { width: 44px; height: 44px; font-size: 19px; }
+      .cbp-text strong { font-size: 16px; }
+    }
+
+    /* ===== Footer: compact "Send us a Message" bar ===== */
+    .footer .footer-message {
+      margin-top: 22px; padding: 18px 22px; border-radius: 14px;
+      background: color-mix(in srgb, var(--default-color), transparent 93%);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 82%);
+    }
+    .footer .fm-title { margin: 0 0 4px; font-size: 16px; font-weight: 700; color: var(--heading-color); }
+    .footer .fm-text { margin: 0; font-size: 13px; line-height: 1.5; color: var(--default-color); opacity: .85; }
+    .footer .fm-grid {
+      display: grid; gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      grid-template-areas: "n e s b" "m m m b";
+      align-items: stretch;
+    }
+    .footer .fm-grid input[name="name"] { grid-area: n; }
+    .footer .fm-grid input[name="email"] { grid-area: e; }
+    .footer .fm-grid input[name="subject"] { grid-area: s; }
+    .footer .fm-grid textarea { grid-area: m; resize: none; min-height: 40px; }
+    .footer .fm-grid .fm-send { grid-area: b; }
+    .footer .fm-form .form-control {
+      height: auto; padding: 9px 14px; font-size: 14px; border-radius: 8px; box-shadow: none;
+      color: var(--heading-color);
+      background: color-mix(in srgb, var(--default-color), transparent 90%);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+    }
+    .footer .fm-form .form-control::placeholder { color: var(--default-color); opacity: .6; }
+    .footer .fm-form .form-control:focus { border-color: var(--accent-color); background: color-mix(in srgb, var(--default-color), transparent 86%); }
+    .footer .fm-send {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 0 22px; border: 0; border-radius: 8px; font-size: 14px; font-weight: 600; white-space: nowrap;
+      color: #fff; background: var(--accent-color); cursor: pointer; transition: filter .2s, transform .2s;
+    }
+    .footer .fm-send:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .footer .fm-form .loading, .footer .fm-form .error-message, .footer .fm-form .sent-message { margin-top: 8px; font-size: 13px; }
+    @media (max-width: 991.98px) {
+      .footer .fm-grid { grid-template-columns: 1fr 1fr; grid-template-areas: "n e" "s s" "m m" "b b"; }
+      .footer .fm-send { padding: 11px 22px; }
+    }
+    @media (max-width: 575.98px) {
+      .footer .fm-grid { grid-template-columns: 1fr; grid-template-areas: "n" "e" "s" "m" "b"; }
+    }
+    .footer .footer-message-side { margin-top: 0; padding: 22px 24px; }
+    .footer .footer-message-side .fm-title { font-size: 20px; }
+    .footer .footer-message-side .fm-text { margin-bottom: 16px; font-size: 14px; }
+    .footer .footer-message-side .fm-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "n e" "s s" "m m" "b b";
+    }
+    .footer .footer-message-side .fm-send { padding: 12px 22px; }
+    .footer .footer-nav-row { margin-top: 34px; padding-top: 28px; border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%); }
+    @media (max-width: 575.98px) {
+      .footer .footer-message-side .fm-grid { grid-template-columns: 1fr; grid-template-areas: "n" "e" "s" "m" "b"; }
+    }
+    /* force white text in the Immediate Assistance block (beats the theme's own colors) */
+    .contact-block.contact-block-pro .cbp-content h2,
+    .contact-block.contact-block-pro .cbp-content .cbp-badge { color: #ffffff !important; }
+    .contact-block.contact-block-pro .cbp-content p,
+    .contact-block.contact-block-pro .contact-content p { color: #ffffff !important; opacity: 1 !important; }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header fixed-top">
+
+    <div class="topbar d-flex align-items-center dark-background">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a
+              href="mailto:contact@example.com">contact@example.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#!" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#!" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#!" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#!" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename"><img src="image2.jpeg" alt="Proactive Life logo"></h1>
+        </a>
+
+        <div class="header-actions">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="department-details.html">Department Details</a></li>
+              <li><a href="service-details.html">Service Details</a></li>
+              <li><a href="appointment.html">Appointment</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="faq.html">Frequently Asked Questions</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="terms.html">Terms</a></li>
+              <li><a href="privacy.html">Privacy</a></li>
+              <li><a href="404.html">404</a></li>
+            </ul>
+            </li>
+            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Dropdown 1</a></li>
+                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Dropdown 1</a></li>
+                    <li><a href="#">Deep Dropdown 2</a></li>
+                    <li><a href="#">Deep Dropdown 3</a></li>
+                    <li><a href="#">Deep Dropdown 4</a></li>
+                    <li><a href="#">Deep Dropdown 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Dropdown 2</a></li>
+                <li><a href="#">Dropdown 3</a></li>
+                <li><a href="#">Dropdown 4</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button"
+          aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+          <i class="bi bi-moon-stars-fill theme-icon-moon" aria-hidden="true"></i>
+          <i class="bi bi-sun-fill theme-icon-sun" aria-hidden="true"></i>
+        </button>
+        </div><!-- /.header-actions -->
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+
+    <!-- Hero Section -->
+    <section id="hero" class="hx-hero section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center hx-row">
+
+          <div class="col-lg-6">
+            <div class="hx-content">
+
+              <div class="hx-badges" data-aos="fade-right" data-aos-delay="200">
+                <span class="hx-badge"><i class="bi bi-shield-check"></i><span>Accredited</span></span>
+                <span class="hx-badge"><i class="bi bi-clock"></i><span>Online Consultation</span></span>
+                <span class="hx-badge hx-badge-star"><i class="bi bi-star-fill"></i><span>4.9/5 Rating</span></span>
+              </div>
+
+              <h1 class="hx-title" data-aos="fade-right" data-aos-delay="300">
+                Excellence in <span class="hx-highlight">Healthcare</span> With Compassionate Care
+              </h1>
+
+              <p class="hx-text" data-aos="fade-right" data-aos-delay="400">
+                One integrative team for your body, mind and family’s health. Private online consultations and
+                regular follow-up care, designed for Afghan refugees and rural communities in Balochistan.
+              </p>
+
+              <div class="hx-stats" data-aos="fade-right" data-aos-delay="500">
+                <div class="hx-stat">
+                  <strong><span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="2"
+                      class="purecounter"></span>+</strong>
+                  <span>Featured Across</span>
+                </div>
+                <div class="hx-stat">
+                  <strong><span data-purecounter-start="0" data-purecounter-end="2000" data-purecounter-duration="2"
+                      class="purecounter"></span>+</strong>
+                  <span>Social Media Followers</span>
+                </div>
+                <div class="hx-stat">
+                  <strong><span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="2"
+                      class="purecounter"></span>+</strong>
+                  <span>Medical Experts</span>
+                </div>
+              </div>
+
+              <div class="hx-actions" data-aos="fade-right" data-aos-delay="600">
+                <a href="appointment.html" class="hx-btn hx-btn-solid">Book Appointment</a>
+                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="hx-btn hx-btn-ghost glightbox">
+                  <i class="bi bi-play-circle"></i>
+                  <span>Watch Our Story</span>
+                </a>
+              </div>
+
+              <div class="hx-hotline" data-aos="fade-right" data-aos-delay="700">
+                <span class="hx-hotline-icon"><i class="bi bi-telephone-fill"></i></span>
+                <span class="hx-hotline-info">
+                  <small>Emergency Hotline</small>
+                  <strong>+1 (555) 911-2468</strong>
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hx-visual" data-aos="fade-left" data-aos-delay="400">
+              <div class="hx-photo">
+                <img src="image1.jpg" alt="A female doctor examining an elderly patient at a clinic in Balochistan">
+              </div>
+              <div class="hx-rating">
+                <div class="hx-stars" aria-label="Rated 4.9 out of 5"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <div class="hx-rating-line">
+                  <strong>4.9/5</strong>
+                  <span>1,234 Reviews</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Featured In Section (separate) -->
+    <div id="featured-in-section" class="featured-in-section">
+      <div class="container">
+        <div class="featured-in" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="featured-head">
+            <span class="featured-in-label">Featured Across</span>
+          </div>
+
+          <!-- Scrolling logo strip. The second set is a copy that makes the loop seamless; add new
+               organizations to BOTH sets (the copy is aria-hidden). Put a phone/number inside
+               <span class="featured-org-number"> to show it under the name. -->
+          <div class="featured-marquee">
+            <div class="featured-track">
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 15.jpeg" alt="Women Ascension" loading="lazy"></div>
+              <span class="featured-org-name">Women Ascension</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 3.jpeg" alt="NIC Quetta" loading="lazy" style="--z:1.61"></div>
+              <span class="featured-org-name">NIC Quetta</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 19.jpeg" alt="Women Can Do (WCD)" loading="lazy"></div>
+              <span class="featured-org-name">International Organization for Migration</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 4.jpeg" alt="Women Can Do (WCD)" loading="lazy"></div>
+              <span class="featured-org-name">Women Can Do (WCD)</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 5.jpeg" alt="Social Innovation Academy" loading="lazy" style="--z:1.6"></div>
+              <span class="featured-org-name">Social Innovation Academy</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 6.jpeg" alt="Sustainable Development Goals" loading="lazy"></div>
+              <span class="featured-org-name">Sustainable Development Goals</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 7.jpeg" alt="Prime Minister’s Youth Programme" loading="lazy" style="--z:1.15"></div>
+              <span class="featured-org-name">Prime Minister’s Youth Programme</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 8.jpeg" alt="Scholars Avenue" loading="lazy"></div>
+              <span class="featured-org-name">Scholars Avenue</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 9.jpeg" alt="Catalyst Now" loading="lazy" style="--z:2.12"></div>
+              <span class="featured-org-name">Catalyst Now</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 10.jpeg" alt="Aspire Institute" loading="lazy" style="--z:1.9"></div>
+              <span class="featured-org-name">Aspire Institute</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 11.jpeg" alt="Leading Lady Empire" loading="lazy" style="--z:1.53"></div>
+              <span class="featured-org-name">Leading Lady Empire</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 12.jpeg" alt="Pakistan Physical Therapy Association" loading="lazy"></div>
+              <span class="featured-org-name">Pakistan Physical Therapy Association</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 13.jpeg" alt="Health Bridge Pakistan" loading="lazy"></div>
+              <span class="featured-org-name">Health Bridge Pakistan</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 14.jpeg" alt="STEM Education in Pakistan" loading="lazy"></div>
+              <span class="featured-org-name">STEM Education in Pakistan</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org">
+              <div class="featured-logo"><img src="Image 17.jpeg" alt="Food Youth Academy" loading="lazy"></div>
+              <span class="featured-org-name">Food Youth Academy</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 15.jpeg" alt="" loading="lazy"></div>
+              <span class="featured-org-name">Women Ascension</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 3.jpeg" alt="" loading="lazy" style="--z:1.61"></div>
+              <span class="featured-org-name">NIC Quetta</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 4.jpeg" alt="" loading="lazy"></div>
+              <span class="featured-org-name">Women Can Do (WCD)</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 5.jpeg" alt="" loading="lazy" style="--z:1.6"></div>
+              <span class="featured-org-name">Social Innovation Academy</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 6.jpeg" alt="" loading="lazy"></div>
+              <span class="featured-org-name">Sustainable Development Goals</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 7.jpeg" alt="" loading="lazy" style="--z:1.15"></div>
+              <span class="featured-org-name">Prime Minister’s Youth Programme</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 8.jpeg" alt="" loading="lazy"></div>
+              <span class="featured-org-name">Scholars Avenue</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 9.jpeg" alt="" loading="lazy" style="--z:2.12"></div>
+              <span class="featured-org-name">Catalyst Now</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 10.jpeg" alt="" loading="lazy" style="--z:1.9"></div>
+              <span class="featured-org-name">Aspire Institute</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 11.jpeg" alt="" loading="lazy" style="--z:1.53"></div>
+              <span class="featured-org-name">Leading Lady Empire</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 12.jpeg" alt="" loading="lazy"></div>
+              <span class="featured-org-name">Pakistan Physical Therapy Association</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 13.jpeg" alt="" loading="lazy"></div>
+              <span class="featured-org-name">Health Bridge Pakistan</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 14.jpeg" alt="" loading="lazy"></div>
+              <span class="featured-org-name">STEM Education in Pakistan</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            <div class="featured-org" aria-hidden="true">
+              <div class="featured-logo"><img src="Image 17.jpeg" alt="" loading="lazy"></div>
+              <span class="featured-org-name">Food Youth Academy</span>
+              <span class="featured-org-number" data-placeholder=""></span>
+            </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /Featured In Section -->
+
+    <!-- Home About Section -->
+    <section id="home-about" class="home-about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="about-head">
+          <span class="about-eyebrow">About Proactive Life</span>
+          <h2 class="section-heading">Compassionate Care, Advanced Medicine</h2>
+          <p class="lead-text">Affordable, respectful healthcare for everyone, especially Afghan refugees and rural families in Balochistan.</p>
+        </div>
+
+        <div class="row g-4 g-lg-5 align-items-center">
+
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="about-visual">
+              <div class="main-image">
+                <img src="Image 23.jpg" alt="Modern medical facility" class="img-fluid">
+              </div>
+              <div class="floating-card">
+                <div class="card-content">
+                  <div class="icon">
+                    <i class="bi bi-heart-pulse"></i>
+                  </div>
+                  <div class="card-text">
+                    <h4>24/7 Emergency Care</h4>
+                    <p>Always here when you need us most</p>
+                  </div>
+                </div>
+              </div>
+              <div class="experience-badge">
+                <div class="badge-content">
+                  <span class="years">25+</span>
+                  <span class="text">Years of Trusted Care</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="about-pillars">
+
+              <div class="about-pillar is-mission">
+                <div class="pillar-icon"><i class="bi bi-bullseye"></i></div>
+                <div class="pillar-body">
+                  <h4>Our Mission</h4>
+                  <p>Good healthcare should never depend on where you were born. No woman, child, elder or refugee should have to travel far, or feel unheard, to get the care they need. With one trusted team and one complete plan, we help you recover, grow stronger and live with dignity, while creating respectful work for female health professionals across Balochistan.</p>
+                </div>
+              </div>
+
+              <div class="about-pillar">
+                <div class="pillar-icon"><i class="bi bi-people-fill"></i></div>
+                <div class="pillar-body">
+                  <h4>Our Services</h4>
+                  <p>One integrative team looks after your pain, movement, diet, mental health and your family’s health, with a clear plan made just for you. Care is currently online through private video consultations and regular follow-ups.</p>
+                  <ul class="service-chips">
+                      <li>Physical Therapy</li>
+                      <li>Fitness Coaching</li>
+                      <li>Nutrition Guidance</li>
+                      <li>Psychiatric Treatment</li>
+                      <li>Neurological Treatment &amp; Rehabilitation</li>
+                      <li>Women &amp; Child Health</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="stats-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-item">
+            <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="15000"
+              data-purecounter-duration="1"></div>
+            <div class="stat-label">Patients Served</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="25"
+              data-purecounter-duration="1"></div>
+            <div class="stat-label">Years of Excellence</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="50"
+              data-purecounter-duration="1"></div>
+            <div class="stat-label">Medical Specialists</div>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <a href="about.html" class="btn-primary">Learn More About Us</a>
+        </div>
+
+      </div>
+
+    </section><!-- /Home About Section -->
+
+    <!-- Featured Departments Section -->
+    <section id="featured-departments" class="featured-departments section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Featured Departments</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4">
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="specialty-card">
+              <div class="specialty-content">
+                <div class="specialty-meta">
+                  <span class="specialty-label">Rehabilitation Care</span>
+                </div>
+                <h3>Physical Therapy</h3>
+                <p>Personalized rehabilitation programs that restore movement, reduce pain and help patients regain strength and independence after injury, surgery or illness.</p>
+                <div class="specialty-features">
+                  <span><i class="bi bi-check-circle-fill"></i>Post-Surgery Rehabilitation</span>
+                  <span><i class="bi bi-check-circle-fill"></i>Personalized Exercise Programs</span>
+                </div>
+                <a href="department-details.html" class="specialty-link">
+                  Explore Physical Therapy <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+              <div class="specialty-visual">
+                <img src="Image22.jpg" alt="Physical Therapy" class="img-fluid">
+                <div class="visual-overlay">
+                  <i class="bi bi-person-walking"></i>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Specialty Card -->
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="specialty-card">
+              <div class="specialty-content">
+                <div class="specialty-meta">
+                  <span class="specialty-label">Integrated Care</span>
+                </div>
+                <h3>Psychiatric &amp; Neurological Care</h3>
+                <p>Compassionate, coordinated care for mental health and neurological conditions, supporting the mind, brain and nervous system together.</p>
+                <div class="specialty-features">
+                  <span><i class="bi bi-check-circle-fill"></i>Mental Health Counselling</span>
+                  <span><i class="bi bi-check-circle-fill"></i>Neurological Assessment</span>
+                </div>
+                <a href="department-details.html" class="specialty-link">
+                  Explore Psychiatric &amp; Neurological Care <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+              <div class="specialty-visual">
+                <img src="Image 20.jpg" alt="Psychiatric and Neurological Care" class="img-fluid">
+                <div class="visual-overlay">
+                  <i class="bi bi-cpu"></i>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Specialty Card -->
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="specialty-card">
+              <div class="specialty-content">
+                <div class="specialty-meta">
+                  <span class="specialty-label">Family Care</span>
+                </div>
+                <h3>Women &amp; Child Care</h3>
+                <p>Family-centered care for mothers and children, from pregnancy and delivery through newborn care and healthy childhood development.</p>
+                <div class="specialty-features">
+                  <span><i class="bi bi-check-circle-fill"></i>Antenatal &amp; Postnatal Care</span>
+                  <span><i class="bi bi-check-circle-fill"></i>Newborn &amp; Child Health</span>
+                </div>
+                <a href="department-details.html" class="specialty-link">
+                  Explore Mother &amp; Child Care <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+              <div class="specialty-visual">
+                <img src="Image 21.jpg" alt="Mother and Child Care" class="img-fluid">
+                <div class="visual-overlay">
+                  <i class="bi bi-balloon-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Specialty Card -->
+
+        </div>
+
+        <div class="emergency-banner" data-aos="fade-up" data-aos-delay="400">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <div class="emergency-content">
+                <h3>Online Consultation Available</h3>
+                <p>Our emergency department is equipped with state-of-the-art technology and staffed by board-certified
+                  emergency physicians ready to provide immediate care.</p>
+              </div>
+            </div>
+            <div class="col-lg-5 text-lg-end">
+              <a href="tel:+9233319779497" class="emergency-btn">
+                <i class="bi bi-telephone-fill"></i>
+                <span class="emergency-btn-label">Online Consultation:</span>
+                <span class="emergency-btn-number">+92 33319779497</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Departments Section -->
+
+    <!-- Find A Doctor Section -->
+    <section id="find-a-doctor" class="find-a-doctor section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Team</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+        <div class="doctors-grid" data-aos="fade-up" data-aos-delay="300">
+          <div class="doctor-profile" data-aos="zoom-in" data-aos-delay="100">
+            <div class="profile-header">
+              <div class="doctor-avatar">
+                <img src="Image 24.jpeg" alt="Dr. Asma Ahmed" class="img-fluid">
+                <div class="status-indicator available"></div>
+              </div>
+              <div class="doctor-details">
+                <h4>Dr. Asma Ahmed [PT]</h4>
+                <span class="specialty-tag">Physical Therapist</span>
+                <div class="experience-info">
+                  <i class="bi bi-award"></i>
+                  <span>2 years experience</span>
+                </div>
+              </div>
+            </div>
+            <div class="rating-section">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <span class="rating-score">4.9</span>
+              <span class="review-count">(127 reviews)</span>
+            </div>
+            <div class="action-buttons">
+              <a href="#!" class="btn-secondary">View Details</a>
+              <a href="#!" class="btn-primary">Book Now</a>
+            </div>
+          </div><!-- End Doctor Profile -->
+
+          <div class="doctor-profile" data-aos="zoom-in" data-aos-delay="200">
+            <div class="profile-header">
+              <div class="doctor-avatar">
+                <img src="Image 25.jpeg" alt="Dr. Marcus Johnson" class="img-fluid">
+                <div class="status-indicator busy"></div>
+              </div>
+              <div class="doctor-details">
+                <h4>Dr. Laiqa Ahmed Khan Achakzai</h4>
+                <span class="specialty-tag">Psychiatric & Neurological Expert</span>
+                <div class="experience-info">
+                  <i class="bi bi-award"></i>
+                  <span>1 year experience</span>
+                </div>
+              </div>
+            </div>
+            <div class="rating-section">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+              </div>
+              <span class="rating-score">4.8</span>
+              <span class="review-count">(89 reviews)</span>
+            </div>
+            <div class="action-buttons">
+              <a href="#!" class="btn-secondary">View Details</a>
+              <a href="#!" class="btn-primary">Schedule</a>
+            </div>
+          </div><!-- End Doctor Profile -->
+
+          <div class="doctor-profile" data-aos="zoom-in" data-aos-delay="300">
+            <div class="profile-header">
+              <div class="doctor-avatar">
+                <img src="Image 26.jpeg" alt="Dr. Bibi Fatima" class="img-fluid">
+                <div class="status-indicator available"></div>
+              </div>
+              <div class="doctor-details">
+                <h4>Dr. Bibi Fatima</h4>
+                <span class="specialty-tag">Mother & Child Expert</span>
+                <div class="experience-info">
+                  <i class="bi bi-award"></i>
+                  <span>1 year experience</span>
+                </div>
+              </div>
+            </div>
+            <div class="rating-section">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <span class="rating-score">5.0</span>
+              <span class="review-count">(203 reviews)</span>
+            </div>
+            <div class="action-buttons">
+              <a href="#!" class="btn-secondary">View Details</a>
+              <a href="#!" class="btn-primary">Book Now</a>
+            </div>
+          </div><!-- End Doctor Profile -->
+
+          <div class="doctor-profile" data-aos="zoom-in" data-aos-delay="400">
+            <div class="profile-header">
+              <div class="doctor-avatar">
+                <img src="assets/img/health/staff-8.webp" alt="Dr. David Chen" class="img-fluid">
+                <div class="status-indicator offline"></div>
+              </div>
+              <div class="doctor-details">
+                <h4>Saad Ahmed Khan</h4>
+                <span class="specialty-tag">[Pre-Med] Social Media & IT Adminstrator</span>
+                <div class="experience-info">
+                  <i class="bi bi-award"></i>
+                  <span>2 years experience</span>
+                </div>
+              </div>
+            </div>
+            <div class="rating-section">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+              </div>
+              <span class="rating-score">4.7</span>
+              <span class="review-count">(156 reviews)</span>
+            </div>
+            <div class="action-buttons">
+              <a href="#!" class="btn-secondary">View Details</a>
+              <a href="#!" class="btn-primary">Schedule</a>
+            </div>
+          </div><!-- End Doctor Profile -->
+
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="700">
+          <a href="#find-a-doctor" class="btn-view-all">
+            View All Doctors <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </section><!-- /Find A Doctor Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="hero-content incentive">
+          <div class="row g-4 g-lg-5 align-items-center">
+
+            <div class="col-lg-6">
+              <div class="content-wrapper incentive-content" data-aos="fade-up" data-aos-delay="200">
+                <span class="incentive-eyebrow"><i class="bi bi-gift-fill"></i> Special Incentives</span>
+                <h2 class="incentive-title">Special Incentives for <span>Local &amp; Afghan Citizens</span></h2>
+                <p class="incentive-text">For too long, local communities in Balochistan and Afghan patients in Pakistan have endured grueling travel, scarce local options, and dismissive treatment when seeking medical help. We are changing that. With special incentives for both Balochistan locals and Afghan patients, we deliver affordable care, regular follow-ups, and private video consultations straight to your home. Leave behind the long journeys and the fear of being unheard—partner with one trusted team dedicated to your dignity and recovery.</p>
+
+                <ul class="incentive-perks">
+                  <li><span class="perk-icon"><i class="bi bi-wallet2"></i></span><span class="perk-label">Affordable care</span></li>
+                  <li><span class="perk-icon"><i class="bi bi-arrow-repeat"></i></span><span class="perk-label">Regular follow-ups</span></li>
+                  <li><span class="perk-icon"><i class="bi bi-camera-video-fill"></i></span><span class="perk-label">Private video consultations</span></li>
+                </ul>
+
+                <div class="cta-wrapper">
+                  <a href="appointment.html" class="primary-cta">
+                    <span>Schedule Consultation</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                  <a href="services.html" class="secondary-cta">
+                    <span>Explore Services</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="image-container incentive-visual" data-aos="fade-left" data-aos-delay="300">
+                <div class="incentive-img">
+                  <img src="Image18.jpg" alt="A patient in Balochistan receiving a private video consultation with a Proactive Life doctor" class="img-fluid">
+                </div>
+                <div class="incentive-tag">
+                  <span class="tag-icon"><i class="bi bi-heart-pulse-fill"></i></span>
+                  <div>
+                    <strong>Care that reaches you</strong>
+                    <span>Online, private and respectful</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-pro section">
+
+      <div class="container">
+
+        <div class="text-center" data-aos="fade-up">
+          <span class="tp-eyebrow">Patient Stories</span>
+          <h2 class="tp-title">What Our Patients Say</h2>
+          <p class="tp-sub">Real experiences from the people we have had the privilege to care for.</p>
+        </div>
+
+        <ul class="tp-stats" data-aos="fade-up" data-aos-delay="100">
+          <li><strong>4.9 <i class="bi bi-star-fill"></i></strong><span>Average rating</span></li>
+          <li><strong></strong><span></span></li>
+          <li><strong>98%</strong><span>Would recommend us</span></li>
+        </ul>
+
+        <div class="row gy-5 gx-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <article class="tp-card">
+              <div class="tp-quote-icon"><i class="bi bi-quote"></i></div>
+              <div class="tp-stars" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="tp-text">“ Dr. Asma Ahmed’s expert care fully cured my stiff neck. Her holistic approach, with counseling and personalized fitness sessions, boosted my performance and gave me the confidence to compete at the highest level. ”</p>
+              <div class="tp-author">
+                <div class="tp-avatar">HR</div>
+                <div>
+                  <h5>
+Hassan Rafique
+[Molecular Biologist]</h5>
+                  <small><i class="bi bi-heart-pulse"></i>Treated by Dr. Asma Ahmed</small>
+                </div>
+                <i class="bi bi-patch-check-fill tp-verified" title="Verified patient"></i>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <article class="tp-card">
+              <div class="tp-quote-icon"><i class="bi bi-quote"></i></div>
+              <div class="tp-stars" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="tp-text">" Working with Asma was a breath of fragrant air because she blended with me so well for the task we had to deliver. She’s a great team player and a very knowledgeable physical health professional. "</p>
+              <div class="tp-author">
+                <div class="tp-avatar">TI</div>
+                <div>
+                  <h5>Tessy Ilozue [Psychotherapist]</h5>
+                  <small><i class="bi bi-heart-pulse"></i>Muscleoskeletal Patient</small>
+                </div>
+                <i class="bi bi-patch-check-fill tp-verified" title="Verified patient"></i>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <article class="tp-card">
+              <div class="tp-quote-icon"><i class="bi bi-quote"></i></div>
+              <div class="tp-stars" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="tp-text">“ Opening up about my mental health felt safe from the very first session. The psychiatric team listened without judgment and supported me through private video consultations. I now sleep better, think more clearly and feel like myself again. ”</p>
+              <div class="tp-author">
+                <div class="tp-avatar">SK</div>
+                <div>
+                  <h5>Sarah Yousaf [Medicine Student]</h5>
+                  <small><i class="bi bi-heart-pulse"></i>Anxiety Disorder Patient</small>
+                </div>
+                <i class="bi bi-patch-check-fill tp-verified" title="Verified patient"></i>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Call To Action Section (features) -->
+    <section id="call-to-action-features" class="call-to-action section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="features-section">
+
+          <div class="row g-0">
+
+            <div class="col-lg-4">
+              <div class="feature-block" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <h3>Advanced Technology</h3>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                  laborum.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="feature-block" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                  <i class="bi bi-clock"></i>
+                </div>
+                <h3>24/7 Availability</h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+                  excepteur.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="feature-block" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon">
+                  <i class="bi bi-people"></i>
+                </div>
+                <h3>Expert Team</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+                  totam rem.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="contact-block contact-block-pro" data-aos="fade-up" data-aos-delay="150">
+          <span class="cbp-orb cbp-orb-1"></span>
+          <span class="cbp-orb cbp-orb-2"></span>
+          <div class="row align-items-center gy-4 position-relative">
+
+            <div class="col-lg-6">
+              <div class="contact-content cbp-content">
+                <span class="cbp-badge"><i class="bi bi-heart-pulse-fill"></i> Care available around the clock</span>
+                <h2>Need Immediate Medical Assistance?</h2>
+                <p>Our emergency response team is available around the clock to provide immediate medical support when
+                  you need it most. Choose the way that suits you best.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="cbp-actions">
+                <a href="appointment.html?type=online" class="cbp-btn cbp-btn-primary">
+                  <span class="cbp-icon"><i class="bi bi-camera-video-fill"></i></span>
+                  <span class="cbp-text">
+                    <strong>Book an Online Consultation</strong>
+                    <small>Talk to a doctor from home</small>
+                  </span>
+                  <i class="bi bi-arrow-right cbp-arrow"></i>
+                </a>
+                <a href="appointment.html?type=in-person" class="cbp-btn cbp-btn-secondary">
+                  <span class="cbp-icon"><i class="bi bi-hospital-fill"></i></span>
+                  <span class="cbp-text">
+                    <strong>Book an In-Person Appointment</strong>
+                    <small>Visit our clinic in person</small>
+                  </span>
+                  <i class="bi bi-arrow-right cbp-arrow"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section (features) -->
+
+  </main>
+
+  <footer id="footer" class="footer-16 footer position-relative">
+
+    <div class="container">
+
+      <div class="footer-main" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-start gy-4">
+
+          <div class="col-lg-5">
+            <div class="brand-section">
+              <a href="index.html" class="logo d-flex align-items-center mb-4">
+                <span class="sitename">Proactive Life</span>
+              </a>
+              <p class="brand-description">Crafting exceptional digital experiences through thoughtful design and
+                innovative solutions that elevate your brand presence.</p>
+
+              <div class="contact-info mt-5">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>123 Creative Boulevard, Design District, NY 10012</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span>+1 (555) 987-6543</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span>hello@designstudio.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <!-- Send us a Message -->
+            <div class="footer-message footer-message-side">
+              <h6 class="fm-title">Send us a Message</h6>
+              <p class="fm-text">Have questions? Reach out to us and our team will get back to you shortly.</p>
+              <form action="forms/contact.php" method="post" class="php-email-form fm-form">
+                <div class="fm-grid">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                  <textarea name="message" class="form-control" rows="3" placeholder="Your Message" required></textarea>
+                  <button type="submit" class="fm-send">Send Message <i class="bi bi-send"></i></button>
+                </div>
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </form>
+            </div><!-- End Send us a Message -->
+          </div>
+
+        </div>
+
+        <!-- Studio / Services / Resources / Connect -->
+        <div class="row footer-nav-row">
+          <div class="col-12">
+            <div class="footer-nav-wrapper">
+              <div class="row">
+
+                <div class="col-6 col-lg-3">
+                  <div class="nav-column">
+                    <h6>Studio</h6>
+                    <nav class="footer-nav">
+                      <a href="#!">Our Story</a>
+                      <a href="#!">Design Process</a>
+                      <a href="#!">Portfolio</a>
+                      <a href="#!">Case Studies</a>
+                      <a href="#!">Awards</a>
+                    </nav>
+                  </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                  <div class="nav-column">
+                    <h6>Services</h6>
+                    <nav class="footer-nav">
+                      <a href="#!">Brand Identity</a>
+                      <a href="#!">Web Design</a>
+                      <a href="#!">Mobile Apps</a>
+                      <a href="#!">Digital Strategy</a>
+                      <a href="#!">Consultation</a>
+                    </nav>
+                  </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                  <div class="nav-column">
+                    <h6>Resources</h6>
+                    <nav class="footer-nav">
+                      <a href="#!">Design Blog</a>
+                      <a href="#!">Style Guide</a>
+                      <a href="#!">Free Assets</a>
+                      <a href="#!">Tutorials</a>
+                      <a href="#!">Inspiration</a>
+                    </nav>
+                  </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                  <div class="nav-column">
+                    <h6>Connect</h6>
+                    <nav class="footer-nav">
+                      <a href="#!">Start Project</a>
+                      <a href="#!">Schedule Call</a>
+                      <a href="#!">Join Newsletter</a>
+                      <a href="#!">Follow Updates</a>
+                      <a href="#!">Partnership</a>
+                    </nav>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="bottom-content" data-aos="fade-up" data-aos-delay="300">
+          <div class="row align-items-center">
+
+            <div class="col-lg-6">
+              <div class="copyright">
+                <p>© <span class="sitename">Proactive Life</span>. All rights reserved.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="legal-links">
+                <a href="#!">Privacy Policy</a>
+                <a href="#!">Terms of Service</a>
+                <a href="#!">Cookie Policy</a>
+                <div class="credits">
+                  <!-- All the links in the footer should remain intact. -->
+                  <!-- You can delete the links only if you've purchased the pro version. -->
+                  <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                  <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>. Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#!" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+  <!-- Dark / light mode toggle -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+
+      function sync() {
+        var dark = root.getAttribute('data-theme') === 'dark';
+        var label = dark ? 'Switch to light mode' : 'Switch to dark mode';
+        btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+        btn.setAttribute('aria-label', label);
+        btn.title = label;
+      }
+
+      btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        root.setAttribute('data-bs-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        sync();
+      });
+
+      sync();
+    })();
+  </script>
+
+</body>
+
+</html>
